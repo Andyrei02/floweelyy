@@ -1,0 +1,78 @@
+.catalog {
+    background: #fce8e6;
+    padding: 100px 0; /* Increased padding to move it lower */
+    text-align: center;
+}
+
+.catalog-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.catalog h2 {
+    font-size: 32px;
+    color: #8b2d42;
+    margin-bottom: 15px;
+}
+
+.catalog p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.bouquet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.bouquet-item {
+    background: #fff6f6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bouquet-image {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.bouquet-item img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.bouquet-item img:hover {
+    transform: scale(1.1);
+}
+
+.bouquet-item h3 {
+    margin-top: 15px;
+    color: #8b2d42;
+    font-size: 20px;
+}
+
+.bouquet-item p {
+    font-size: 16px;
+    color: #777;
+}
+
+.catalog-btn {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 12px 25px;
+    background: #d94f70;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.catalog-btn:hover {
+    background: #b83e5a;
+}

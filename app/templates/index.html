@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flowers Shop</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+
+<body>
+  <header>
+    {% include 'navbar.html' %}
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+        <p>Букеты с доставкой в ​​Глодянах</p>
+        <h1>F L O W E R S</h1>
+        <div class="flower-decoration">
+            <img src="flowers.png" alt="Flowers">
+        </div>
+    </div>
+  </section>
+
+  <!-- Popular Bouquets -->
+  <section class="popular">
+    <h2>Популярные букеты</h2>
+    <div class="bouquet-list">
+        <div class="bouquet">
+            <img src="{{ url_for('static', filename='images/flower.png') }}" alt="Букет 1">
+            <p>Розы, альстромерии и эустома</p>
+            <span>000 lei</span>
+        </div>
+        <div class="bouquet">
+            <img src="{{ url_for('static', filename='images/flower.png') }}" alt="Букет 2">
+            <p>Белые и розовые кустовые розы</p>
+            <span>000 lei</span>
+        </div>
+        <div class="bouquet">
+            <img src="{{ url_for('static', filename='images/flower.png') }}" alt="Букет 3">
+            <p>Эустома и листья эвкалипта</p>
+            <span>000 lei</span>
+        </div>
+    </div>
+    <button class="more-btn">Больше букетов</button>
+  </section>
+
+
+  <section class="about">
+    <div class="about-container">
+        <div class="about-text">
+            <h2>О нашей цветочной мастерской</h2>
+            <p>
+                Наша команда занимается свадебным декором и флористикой уже более 5 лет. 
+                В 2019 году мы получили свой диплом мастера и открыли нашу цветочную мастерскую. 
+                Здесь вы можете найти красивые букеты, композиции, цветы, кадки и деревья, и многое другое.
+            </p>
+        </div>
+        <div class="about-images">
+            <img src="{{ url_for('static', filename='images/about_flower1.jpg') }}" alt="Букет тюльпанов" class="main-img">
+            <img src="{{ url_for('static', filename='images/about_flower.jpg') }}" alt="Розовый цветок" class="small-img">
+        </div>
+    </div>
+  </section>
+
+  {% include 'catalog.html' %}
+
+  {% include 'footer.html' %}
+
+</body>
+</html>

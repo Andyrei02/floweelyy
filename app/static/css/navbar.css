@@ -1,0 +1,57 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+/* Navigation Bar */
+.nav-bar {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Left Menu */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu li {
+    display: inline;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #8b2d42;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #e86f9c;
+}
+
+/* Logo */
+.logo a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #8b2d42;
+}
+
+/* Right Icons */
+.nav-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-icons a {
+    color: #8b2d42;
+    font-size: 20px;
+    transition: 0.3s ease;
+}
+
+.nav-icons a:hover {
+    color: #e86f9c;
+}
