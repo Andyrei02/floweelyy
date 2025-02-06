@@ -1,11 +1,24 @@
-from flask import Flask, request, render_template
+from flask import Flask
+from flask_login import LoginManager
+
+from app.models import db
+from app.routes import main_bp
+from app.admin import setup_admin, login_manager
+from config import Config
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="app/static", template_folder="app/templates")
+app.config.from_object(Config)
 
-@app.route('/')
-def home():
-    return render_template('index.html')
+db.init_app(app)
+login_manager.init_app(app)
+
+setup_admin(app)
+
+app.register_blueprint(main_bp)
+
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    with app.app_context():
+        db.create_all()
+    app.run(host='0.0.0.0', port=5000, debug=True)

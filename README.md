@@ -1,6 +1,16 @@
 # floweelyy
 Flowers site
 
+## миграции базы данных
+python main.py
+
+## Создаём админа вручную
+Перед первым запуском добавим администратора:
+python add_administrator.py
+
+## Запуск
+flask --app main run
+
 # To Do
 ## минимальный функционал (MVP)
 - Каталог товаров
