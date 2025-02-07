@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/auth_css/login.css') }}">
+
+
+{% block content %}
+<h2>Вход</h2>
+<form method="POST">
+    <p>Email: <input type="email" name="email" required></p>
+    <p>Пароль: <input type="password" name="password" required></p>
+    <div class="buttons-container">
+        <button type="submit" class="btn">Войти</button>
+        <a href="/auth/register" class="btn login-btn">Создать аккаунт</a>
+    </div>
+    
+</form>
+{% endblock %}

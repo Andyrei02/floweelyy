@@ -15,6 +15,7 @@ class Flower(db.Model):
 
 class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)  # Связь с User
     customer_name = db.Column(db.String(100), nullable=False)
     customer_phone = db.Column(db.String(20), nullable=False)
     customer_address = db.Column(db.Text, nullable=False)
@@ -33,3 +34,13 @@ class AdminUser(UserMixin, db.Model):
     def __repr__(self):
         return f'<Admin {self.username}>'
 
+class User(UserMixin, db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(150), unique=True, nullable=False)
+    phone = db.Column(db.String(20), unique=False, nullable=False)
+    password = db.Column(db.String(256), nullable=False)
+    order = db.relationship('Order', backref='user', lazy=True)
+    
+    def __repr__(self):
+        return f'<User {self.name}>'

@@ -5,6 +5,37 @@ body {
     font-family: 'Playfair Display', serif;
 }
 
+h2 {
+    color: #8b2d42;
+    font-size: 28px;
+}
+
+h3 {
+    color: #8b2d42;
+    font-size: 25px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 12px 25px;
+    background: #d94f70;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 0;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #b83e5a;
+}
+
+
+
+
+
 /* Header Styling */
 header {
     display: flex;

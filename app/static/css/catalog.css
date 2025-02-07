@@ -60,19 +60,3 @@
     font-size: 16px;
     color: #777;
 }
-
-.catalog-btn {
-    display: inline-block;
-    margin-top: 40px;
-    padding: 12px 25px;
-    background: #d94f70;
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.catalog-btn:hover {
-    background: #b83e5a;
-}

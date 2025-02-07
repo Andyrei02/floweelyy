@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/auth_css/login.css') }}">
+
+
+{% block content %}
+<h2>Регистрация</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <p>{{ form.name.label }}: {{ form.name }}</p>
+    <p>{{ form.email.label }}: {{ form.email }}</p>
+    <p>{{ form.phone.label }}: {{ form.phone }}</p>
+    <p>{{ form.password.label }}: {{ form.password }}</p>
+    <p>{{ form.confirm_password.label }}: {{ form.confirm_password }}</p>
+    <div class="buttons-container">
+        <button type="submit" class="btn">Зарегистрироваться</button>
+        <a href="/auth/login" class="btn login-btn">У вас есть аккаунт?</a>
+    </div>
+</form>
+{% endblock %}

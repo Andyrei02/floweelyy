@@ -3,7 +3,7 @@ import uuid
 from flask import Flask, redirect, url_for, request, render_template
 from flask_admin import Admin, expose, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
-from flask_login import LoginManager, login_user, logout_user, login_required, current_user
+from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 from flask_wtf import FlaskForm
@@ -17,18 +17,10 @@ UPLOAD_FOLDER = 'app/static/images/catalog'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-# Настраиваем авторизацию
-login_manager = LoginManager()
-login_manager.login_view = "admin.login"
-
 class LoginForm(FlaskForm):
     username = StringField("Имя пользователя", validators=[DataRequired()])
     password = PasswordField("Пароль", validators=[DataRequired()])
     submit = SubmitField("Войти")
-
-@login_manager.user_loader
-def load_user(user_id):
-    return AdminUser.query.get(int(user_id))
 
 # Класс для защиты админки
 class SecureModelView(ModelView):

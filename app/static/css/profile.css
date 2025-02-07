@@ -1,0 +1,29 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inner-item-profile {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.inner-item-profile span{
+    color: #555;
+}
+
+.btn-danger {
+    background-color: #f24e4e;
+    border: 0;
+}
+
+.btn-danger:hover {
+    background-color: #eb1818;
+}

@@ -2,8 +2,8 @@ from flask import Flask
 from flask_login import LoginManager
 
 from app.models import db
-from app.routes import main_bp
-from app.admin import setup_admin, login_manager
+from app.routes import main_bp, auth_bp, login_manager
+from app.admin import setup_admin
 from config import Config
 
 
@@ -11,11 +11,14 @@ app = Flask(__name__, static_folder="app/static", template_folder="app/templates
 app.config.from_object(Config)
 
 db.init_app(app)
+
+login_manager.login_view = "auth.login"  # Указываем, что для пользователей логин здесь
 login_manager.init_app(app)
 
 setup_admin(app)
 
 app.register_blueprint(main_bp)
+app.register_blueprint(auth_bp, url_prefix="/auth")
 
 
 if __name__ == '__main__':
