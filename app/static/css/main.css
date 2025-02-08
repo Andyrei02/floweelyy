@@ -1,8 +1,10 @@
 body {
+    width: -webkit-fill-available;
     margin: 0;
     padding: 0;
     background-color: #fff6f6;
     font-family: 'Playfair Display', serif;
+    text-align: center;
 }
 
 h2 {
@@ -85,6 +87,7 @@ header {
 .bouquet-list {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 30px;
     margin-top: 20px;
 }

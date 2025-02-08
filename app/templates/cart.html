@@ -1,6 +1,10 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
 
+<header>
+    {% include 'navbar.html' %}
+</header>
+
 {% block content %}
 <h2>Корзина</h2>
 

@@ -2,10 +2,6 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/catalog.css') }}">
 
 
-<header>
-    {% include 'navbar.html' %}
-</header>
-
 <section class="catalog">
     <div class="catalog-container">
         <h2>Каталог букетов</h2>
@@ -31,4 +27,5 @@
             {% endfor %}
         </div>
     </div>
+    <a href="/catalog" class="btn catalog-btn">Перейти в каталог</a>
 </section>
