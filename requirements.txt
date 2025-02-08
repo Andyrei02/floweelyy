@@ -5,3 +5,4 @@ flask-login
 flask-wtf
 werkzeug
 email-validator
+flask-migrate

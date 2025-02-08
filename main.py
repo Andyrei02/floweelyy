@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_login import LoginManager
+from flask_migrate import Migrate
 
 from app.models import db
 from app.routes import main_bp, auth_bp, login_manager
@@ -11,6 +12,7 @@ app = Flask(__name__, static_folder="app/static", template_folder="app/templates
 app.config.from_object(Config)
 
 db.init_app(app)
+migrate = Migrate(app, db)
 
 login_manager.login_view = "auth.login"  # Указываем, что для пользователей логин здесь
 login_manager.init_app(app)

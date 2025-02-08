@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/flower_detail.css') }}">
+
+
+<header>
+    {% include 'navbar.html' %}
+</header>
+
+{% block content %}
+<div class="flower-detail">
+    <div class="product-details-images">
+        <img src="{{ url_for('static', filename=flower.image_url.lstrip('static')) }}" alt="{{ flower.name }}">
+    </div>
+    <div class="product-details-info">
+        <h1>{{ flower.name }}</h1>
+        <p><strong>Цена:</strong> {{ flower.price }} lei</p>
+        <p><strong>Количество цветов:</strong> {{ flower.quantity }}</p>
+        <p>{{ flower.description }}</p>
+
+        <div class="product-to-cart">
+            <!-- Форма для добавления в корзину -->
+            <form action="{{ url_for('main.add_to_cart', flower_id=flower.id) }}" method="post">
+                <input type="hidden" name="flower_id" value="{{ flower.id }}">
+                <button type="submit" class="btn btn-primary">Добавить в корзину</button>
+            </form>
+        </div>
+    </div>
+
+    <a href="{{ url_for('main.catalog') }}" class="btn">← Назад в каталог</a>
+</div>
+{% endblock %}

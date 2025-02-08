@@ -1,4 +1,10 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/catalog.css') }}">
+
+
+<header>
+    {% include 'navbar.html' %}
+</header>
 
 <section class="catalog">
     <div class="catalog-container">
@@ -8,8 +14,10 @@
             {% for flower in flowers %}
             <div class="bouquet-item">
                 <div class="bouquet-image">
-                    <!-- Используем ссылку на изображение из базы данных -->
-                    <img src="{{ flower.image_url or url_for('static', filename='images/default.jpg') }}" alt="{{ flower.name }}">
+                    <a href="{{ url_for('main.flower_detail', flower_name=flower.name) }}">
+                        <!-- Используем ссылку на изображение из базы данных -->
+                        <img src="{{ flower.image_url or url_for('static', filename='images/default.jpg') }}" alt="{{ flower.name }}">
+                    </a>
                 </div>
                 <div class="bouquet-content">
                     <!-- Имя цветка -->
@@ -22,6 +30,5 @@
             </div>
             {% endfor %}
         </div>
-        <a href="/catalog" class="btn catalog-btn">Перейти в каталог</a>
     </div>
 </section>

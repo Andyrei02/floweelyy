@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+
+{% block content %}
+<h2>Корзина</h2>
+
+{% if cart %}
+    <ul>
+    {% for item in cart %}
+        <li>
+            <img src="{{ url_for('static', filename=item.flower.image_url.lstrip('static')) }}" width="50">
+            {{ item.flower.name }} - {{ item.quantity }} шт. - {{ item.flower.price * item.quantity }} lei
+            <form action="{{ url_for('main.remove_from_cart', flower_id=item.flower.id) }}" method="post" style="display:inline;">
+                <button type="submit" class="btn btn-danger btn-sm">Удалить</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="{{ url_for('main.checkout') }}" class="btn btn-success">Оформить заказ</a>
+{% else %}
+    <p>Ваша корзина пуста.</p>
+{% endif %}
+
+{% endblock %}
